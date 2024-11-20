@@ -14,8 +14,8 @@ namespace ChessChallenge.Application
 
         // Display settings
         public const bool DisplayBoardCoordinates = true;
-        public static readonly Vector2 ScreenSizeBig = new(1920, 1080);
-        public static readonly Vector2 ScreenSizeSmall = ScreenSizeBig / 2;
+        public static readonly Vector2 ScreenSizeBig = new(1600, 900);
+        public static readonly Vector2 ScreenSizeSmall = ScreenSizeBig / 12 * 10;
 
         // Other settings
         public const int MaxTokenCount = 1024;

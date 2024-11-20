@@ -13,7 +13,7 @@ namespace ChessChallenge.Application
     {
       
         // Board settings
-        const int squareSize = 50;
+        const int squareSize = 64;
         const double moveAnimDuration = 0.15;
         bool whitePerspective = true;
 
