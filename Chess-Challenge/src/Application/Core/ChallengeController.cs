@@ -17,8 +17,7 @@ namespace ChessChallenge.Application
         public enum PlayerType
         {
             Human,
-            MyBot,
-            EvilBot
+            MyBot
         }
 
         // Game state
@@ -196,7 +195,7 @@ namespace ChessChallenge.Application
         {
             return type switch
             {
-                PlayerType.MyBot => new ChessPlayer(new UCIPlayer(), type),
+                PlayerType.MyBot => new ChessPlayer(new UCIPlayer("engine.exe"), type, GameDurationMilliseconds),
                 _ => new ChessPlayer(new HumanPlayer(boardUI), type)
             };
         }
@@ -253,6 +252,8 @@ namespace ChessChallenge.Application
         {
             if (isPlaying)
             {
+                // Program.ClearAllProcesses();
+
                 isPlaying = false;
                 isWaitingToPlayMove = false;
                 gameID = -1;

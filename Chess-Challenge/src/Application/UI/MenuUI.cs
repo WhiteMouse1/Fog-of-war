@@ -17,19 +17,15 @@ namespace ChessChallenge.Application
             float breakSpacing = spacing * 0.6f;
 
             // Game Buttons
-            if (NextButtonInRow("Human vs MyBot", ref buttonPos, spacing, buttonSize))
+            if (NextButtonInRow("Human vs Engine", ref buttonPos, spacing, buttonSize))
             {
                 var whiteType = controller.HumanWasWhiteLastGame ? ChallengeController.PlayerType.MyBot : ChallengeController.PlayerType.Human;
                 var blackType = !controller.HumanWasWhiteLastGame ? ChallengeController.PlayerType.MyBot : ChallengeController.PlayerType.Human;
                 controller.StartNewGame(whiteType, blackType);
             }
-            if (NextButtonInRow("MyBot vs MyBot", ref buttonPos, spacing, buttonSize))
+            if (NextButtonInRow("Engine vs Engine", ref buttonPos, spacing, buttonSize))
             {
                 controller.StartNewBotMatch(ChallengeController.PlayerType.MyBot, ChallengeController.PlayerType.MyBot);
-            }
-            if (NextButtonInRow("MyBot vs EvilBot", ref buttonPos, spacing, buttonSize))
-            {
-                controller.StartNewBotMatch(ChallengeController.PlayerType.MyBot, ChallengeController.PlayerType.EvilBot);
             }
 
             // Page buttons
@@ -55,17 +51,9 @@ namespace ChessChallenge.Application
                     controller.boardUI.VisualizeBitboard(controller.board.fogBitboard);
                 }
             }
-            if (NextButtonInRow("Rules & Help", ref buttonPos, spacing, buttonSize))
-            {
-                FileHelper.OpenUrl("https://github.com/SebLague/Chess-Challenge");
-            }
-            if (NextButtonInRow("Documentation", ref buttonPos, spacing, buttonSize))
-            {
-                FileHelper.OpenUrl("https://seblague.github.io/chess-coding-challenge/documentation/");
-            }
             if (NextButtonInRow("Submission Page", ref buttonPos, spacing, buttonSize))
             {
-                FileHelper.OpenUrl("https://forms.gle/6jjj8jxNQ5Ln53ie6");
+                FileHelper.OpenUrl("https://forms.gle/3RFQgU6Z12UFDKnU6");
             }
 
             // Window and quit buttons
